@@ -4,7 +4,7 @@
 #
 Name     : R-pdftools
 Version  : 2.2
-Release  : 6
+Release  : 7
 URL      : https://cran.r-project.org/src/contrib/pdftools_2.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pdftools_2.2.tar.gz
 Summary  : Text Extraction, Rendering and Converting of PDF Documents
