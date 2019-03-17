@@ -4,16 +4,22 @@
 #
 Name     : R-pdftools
 Version  : 2.2
-Release  : 7
+Release  : 8
 URL      : https://cran.r-project.org/src/contrib/pdftools_2.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pdftools_2.2.tar.gz
 Summary  : Text Extraction, Rendering and Converting of PDF Documents
 Group    : Development/Tools
 License  : MIT
 Requires: R-pdftools-lib = %{version}-%{release}
+Requires: R-askpass
+Requires: R-cli
+Requires: R-withr
 BuildRequires : R-Rcpp
+BuildRequires : R-askpass
+BuildRequires : R-cli
 BuildRequires : R-qpdf
 BuildRequires : R-rlang
+BuildRequires : R-withr
 BuildRequires : buildreq-R
 BuildRequires : pkgconfig(poppler-cpp)
 
@@ -37,10 +43,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552363570
+export SOURCE_DATE_EPOCH=1552837600
 
 %install
-export SOURCE_DATE_EPOCH=1552363570
+export SOURCE_DATE_EPOCH=1552837600
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -76,8 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library pdftools|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  pdftools || :
 
 
 %files
@@ -103,10 +108,20 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/pdftools/help/pdftools.rdx
 /usr/lib64/R/library/pdftools/html/00Index.html
 /usr/lib64/R/library/pdftools/html/R.css
-/usr/lib64/R/library/pdftools/libs/symbols.rds
+/usr/lib64/R/library/pdftools/tests/testthat.R
+/usr/lib64/R/library/pdftools/tests/testthat/active-pdf-links.original.pdf
+/usr/lib64/R/library/pdftools/tests/testthat/chinese.pdf
+/usr/lib64/R/library/pdftools/tests/testthat/gangnam.pdf
+/usr/lib64/R/library/pdftools/tests/testthat/hello.pdf
+/usr/lib64/R/library/pdftools/tests/testthat/pdf-example-encryption.original.pdf
+/usr/lib64/R/library/pdftools/tests/testthat/pdf-example-fonts.original.pdf
+/usr/lib64/R/library/pdftools/tests/testthat/pdf-example-password.original.pdf
+/usr/lib64/R/library/pdftools/tests/testthat/pdf-example-watermarks.original.pdf
+/usr/lib64/R/library/pdftools/tests/testthat/test-chinese.R
+/usr/lib64/R/library/pdftools/tests/testthat/test-encoding.R
+/usr/lib64/R/library/pdftools/tests/testthat/test-reading.R
+/usr/lib64/R/library/pdftools/tests/testthat/test-render.R
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/pdftools/libs/pdftools.so
-/usr/lib64/R/library/pdftools/libs/pdftools.so.avx2
-/usr/lib64/R/library/pdftools/libs/pdftools.so.avx512
