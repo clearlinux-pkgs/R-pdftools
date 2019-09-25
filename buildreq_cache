@@ -1,8 +1,2 @@
 2.2
-R-Rcpp
-R-askpass
-R-cli
-R-qpdf
-R-rlang
-R-withr
 pkgconfig(poppler-cpp)
