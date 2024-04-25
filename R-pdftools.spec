@@ -5,7 +5,7 @@
 #
 Name     : R-pdftools
 Version  : 3.4.0
-Release  : 56
+Release  : 57
 URL      : https://cran.r-project.org/src/contrib/pdftools_3.4.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pdftools_3.4.0.tar.gz
 Summary  : Text Extraction, Rendering and Converting of PDF Documents
