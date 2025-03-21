@@ -7,7 +7,7 @@
 #
 Name     : R-pdftools
 Version  : 3.5.0
-Release  : 61
+Release  : 62
 URL      : https://ftp.osuosl.org/pub/cran/src/contrib/pdftools_3.5.0.tar.gz
 Source0  : https://ftp.osuosl.org/pub/cran/src/contrib/pdftools_3.5.0.tar.gz
 Summary  : Text Extraction, Rendering and Converting of PDF Documents
